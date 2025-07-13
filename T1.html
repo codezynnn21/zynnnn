@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+
+body {
+ background-color: #e151a7;
+}
+h1{
+    text-align: center;
+}
+ details {
+      width: 300px;
+      cursor: pointer;
+    }
+
+    summary {
+      padding: 10px;
+      background: purple;
+      color: white;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    details[open] summary {
+      border-bottom: 1px solid purple;
+    }
+
+    details ul {
+      margin: 0;
+      padding: 10px;
+      list-style: none;
+      background: #bc2222;
+      animation: slideDown 0.3s ease-in-out;
+
+    }
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+
+
+</style>
+</head>
+<body>
+    <h1>Anime Gallery</h1>
+    <br>
+    <details>
+  <summary>Anime List</summary>
+  <br><br>
+    <li>
+        <a href="T1-1.html" target="bottomrightFrame" onclick="playMusic('demonslayer.mp3')"> Demon Slayer</a>
+        <audio id="musicPlayer"></audio>
+
+
+
+    </li>
+    <br>
+    <li>
+        <a href="T1-2.html" target="bottomrightFrame"  onclick="playMusic('fairytail.mp3')"> Fairy Tail</a>
+         <audio id="musicPlayer"></audio>
+
+    </li>
+    <br>
+     <li>
+        <a href="T1-3.html" target="bottomrightFrame" onclick="playMusic('onepiece.mp3')"> One Piece</a>
+         <audio id="musicPlayer"></audio>
+        
+    </li>
+    </details>
+ <script>
+    function playMusic(file) {
+      const player = document.getElementById("musicPlayer");
+      player.src = file;
+      player.play();
+    }
+  </script>
+</body>
+</html>
